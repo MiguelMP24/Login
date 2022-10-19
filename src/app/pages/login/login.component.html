@@ -1,0 +1,33 @@
+<div class="back" [formGroup]="Formulario">
+  <div class="contenedor">
+
+      <img src="https://cdn-icons-png.flaticon.com/512/534/534087.png">
+
+    <form class="form">
+
+      <mat-form-field class="example-full-width" appearance="fill" class="inputs">
+        <mat-label>Correo Electrónico</mat-label>
+        <input type="email" matInput placeholder="username@organizacion.tipo" formControlName="correo">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Ingresa tu nombre <strong> Correctamente</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill" class="inputs">
+          <mat-label>Contraseña</mat-label>
+          <input type="password" matInput placeholder="Contraseña" formControlName="contrasena">
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Ingresa tu contraseña<strong> Correctamente</strong>
+            </mat-error>
+          </mat-form-field>
+<br>
+    </form>
+
+    <div class="example-button-row" style="position: relative">
+      <button mat-flat-button color="warn" class="buttons" *ngIf="this.Formulario.value == true" (click)="Login()" [disabled]="!Formulario.valid " 
+      >Log-in</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <button mat-stroked-button color="warn" class="buttons"  [routerLink]="['/registro']">Registrarme</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="back" [formGroup]="Formulario">
+  <div class="contenedor">
+
+        <h1 class="fuente">Registro</h1>
+
+    <form class="form">
+    <br>
+
+      <mat-form-field class="example-full-width" appearance="fill" class="inputs">
+        <mat-label>Nombre de Usuario</mat-label>
+        <input type="text" matInput placeholder="Nombre" formControlName="nombre">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Mínimo <strong>5 caracteres</strong>
+          </mat-error>
+        </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill" class="inputs">
+        <mat-label>Correo Electrónico</mat-label>
+        <input type="email" matInput placeholder="username@organizacion.tipo" formControlName="correo">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Ingresa un <strong>correo válido</strong>
+          </mat-error>
+        </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill" class="inputs">
+        <mat-label>Contraseña</mat-label>
+        <input type="password" matInput placeholder="Contraseña" formControlName="contrasena">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Mínimo <strong>6 caracteres</strong>
+          </mat-error>
+        </mat-form-field>
+<br>
+    </form>
+
+    <div class="example-button-row" style="position: relative">
+      <button mat-flat-button color="warn" class="buttons" (click)="guardar()" [disabled]="!Formulario.valid">Registrarme</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <button mat-stroked-button color="warn" class="buttons"  [routerLink]="['/login']">Cancelar</button>
+      </div>
+    </div>
+  </div>
